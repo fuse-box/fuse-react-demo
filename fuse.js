@@ -16,14 +16,12 @@ context(
 		getConfig() {
 			return FuseBox.init({
 				homeDir: "src",
-				target: "browser@es5",
+				target: "browser@esnext",
 				hash: this.isProduction,
 				output: "dist/$name.js",
 				plugins: [
 					[SassPlugin(), CSSPlugin()],
-					WebIndexPlugin({
-						template: "src/index.html"
-					}),
+					WebIndexPlugin({template: "src/index.html"}),
 					this.isProduction &&
 						QuantumPlugin({
 							css: true,

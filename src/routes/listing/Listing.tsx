@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Link, Switch, Route } from "fuse-react";
+import { Link, Switch, Route, navigate } from "fuse-react";
 import "./Listing.scss";
 import { ListingA } from "./listing-a/ListingA";
 
@@ -20,6 +20,7 @@ export class Listing extends React.Component {
 				</div>
 
 				<Switch placeholder={<div>Loading</div>}>
+					<Route path="/listing" exact component={()=> navigate("/listing/a")} />
 					<Route path="/listing/a" component={ListingA} />
 					<Route path="/listing/b" component={() => import("./listing-b/ListingB")} />
 				</Switch>
@@ -27,3 +28,9 @@ export class Listing extends React.Component {
 		);
 	}
 }
+
+				// alternate/original example without default active styles
+				// <Switch placeholder={<div>Loading</div>}>
+				// 	<Route path="/listing/a" component={ListingA} />
+				// 	<Route path="/listing/b" component={() => import("./listing-b/ListingB")} />
+				// </Switch>

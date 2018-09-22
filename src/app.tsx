@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import { Link, Switch } from "fuse-react";
+import { Link, Switch, Route, navigate } from "fuse-react";
 import "./style.scss";
 
 const config = {
@@ -42,7 +42,10 @@ class MyRootComponent extends React.Component {
 					<Menu />
 				</div>
 				<div className="right">
-					<Switch config={config} />
+					<Switch>
+						<Route path="/" exact component={()=> navigate("/blog")} />
+					</Switch>
+					<Switch config={config}/>
 				</div>
 			</div>
 		);
@@ -50,3 +53,16 @@ class MyRootComponent extends React.Component {
 }
 
 ReactDOM.render(<MyRootComponent />, document.querySelector("#root"));
+
+			// alternate/original example without default active styles
+			// <div className="demo">
+			// 	<div className="left">
+			// 		<Menu />
+			// 	</div>
+			// 	<div className="right">
+			// 		<Switch>
+			// 			<Route path="/" exact component={()=> navigate("/blog")} />
+			// 		</Switch>
+			// 		<Switch config={config}/>
+			// 	</div>
+			// </div>
