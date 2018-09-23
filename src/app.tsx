@@ -60,9 +60,6 @@ ReactDOM.render(<MyRootComponent />, document.querySelector("#root"));
 			// 		<Menu />
 			// 	</div>
 			// 	<div className="right">
-			// 		<Switch>
-			// 			<Route path="/" exact component={()=> navigate("/blog")} />
-			// 		</Switch>
 			// 		<Switch config={config}/>
 			// 	</div>
 			// </div>
