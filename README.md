@@ -19,4 +19,4 @@ If you want to run it in development mode
 node fuse
 ```
 
-Comments/examples for default activeStyles in src/app.tsx and src/routes/listing/listng.tsx
+Commented examples for default activeStyles/routes in src/app.tsx and src/routes/listing/listng.tsx
