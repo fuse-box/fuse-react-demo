@@ -16,7 +16,7 @@ context(
 		getConfig() {
 			return FuseBox.init({
 				homeDir: "src",
-				target: "browser@esnext",
+				target: "browser@es5",
 				hash: this.isProduction,
 				output: "dist/$name.js",
 				plugins: [
